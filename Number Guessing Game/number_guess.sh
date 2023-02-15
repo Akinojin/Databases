@@ -38,7 +38,7 @@ do
   then
     echo "That is not an integer, guess again:"
   else
-    # if equal than secret number
+    # if equal secret number
     if [[ "$NUMBER_GUESS" -eq "$SECRET_NUMBER" ]]
     then
       UPDATE_BEST_GAME=$($PSQL "UPDATE user_data SET best_game='$NUMBER_OF_GUESSES' WHERE (name iLIKE '$USERNAME' OR name iLIKE '$USERNAME_IN_DATABASE') AND (best_game IS NULL OR best_game>$NUMBER_OF_GUESSES)")
